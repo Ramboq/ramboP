@@ -1,40 +1,237 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>RAMBOS</title>
-        <img src="Rambo.png" alt="Rambo Bambo uciekl!" height="100" width="100"
-            </head>
-    <body>
-        <h1>Oficjalna strona Rambos</h1>
-        <h2>RamboOS - System z pasją po moim kotku🐈‍⬛</h2>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RamboOS</title>
+    <style>
+        /* Import fajnej czcionki */
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+        /* Główne zmienne kolorystyczne */
+        :root {
+            --bg-color: #0f1115;
+            --container-bg: #1a1d24;
+            --text-main: #c9d1d9;
+            --text-heading: #ffffff;
+            --accent-color: #58a6ff;
+            --discord-color: #5865F2;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Główny kontener strony */
+        .container {
+            max-width: 800px;
+            background-color: var(--container-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-top: 4px solid var(--accent-color);
+        }
+
+        /* Nagłówek i obrazek */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header img {
+            border-radius: 50%;
+            border: 3px solid var(--accent-color);
+            padding: 5px;
+            box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
+            transition: transform 0.3s;
+        }
+
+        header img:hover {
+            transform: scale(1.05);
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--text-heading);
+            margin-top: 0;
+        }
+
+        h1 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.5em;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            font-size: 1.2em;
+            color: #8b949e;
+            font-weight: 300;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #30363d;
+            margin: 30px 0;
+        }
+
+        /* Sekcja opisu (tekst i listy) */
+        .description {
+            line-height: 1.6;
+        }
+
+        .description p {
+            margin-bottom: 15px;
+        }
+
+        .description ul {
+            background: #161b22;
+            padding: 20px 20px 20px 40px;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .description li {
+            margin-bottom: 10px;
+        }
+
+        /* Odtwarzacz audio */
+        .audio-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: #161b22;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .audio-section h3 {
+            margin: 0;
+            color: var(--accent-color);
+        }
+
+        audio {
+            height: 40px;
+            outline: none;
+        }
+
+        /* Przyciski z linkami */
+        .links-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .link-box {
+            background: #21262d;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .link-box:hover {
+            background: #30363d;
+        }
+
+        .link-box h4 {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        a.btn {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: var(--accent-color);
+            padding: 10px 25px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+            transition: 0.3s;
+        }
+
+        a.btn:hover {
+            background: #408bea;
+            box-shadow: 0 0 10px rgba(88, 166, 255, 0.4);
+        }
+
+        a.btn-discord {
+            background: var(--discord-color);
+        }
+
+        a.btn-discord:hover {
+            background: #4752C4;
+            box-shadow: 0 0 10px rgba(88, 101, 242, 0.4);
+        }
+
+        /* Responsywność dla telefonów */
+        @media (max-width: 600px) {
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <img src="Rambo.png" alt="Rambo Bambo uciekł!" height="120" width="120">
+            <h1>RamboOS</h1>
+            <h2>System z pasją dla mojego kotka 🐈‍⬛</h2>
+        </header>
+
         <hr>
-        <h3>RamboOS — description
 
-RamboOS is a minimal x86 operating system built entirely from scratch — no Linux kernel, no GRUB, no libc. Every byte that runs before you see the rambo> prompt was written specifically for this project: a hand-written stage-1 bootloader, a protected-mode kernel, its own disk drivers, and its own filesystem. It's named after Rambo, a much-loved cat.
+        <div class="description">
+            <h3>O projekcie</h3>
+            <p><strong>RamboOS</strong> is a minimal x86 operating system built entirely from scratch — no Linux kernel, no GRUB, no libc. Every byte that runs before you see the <code>rambo></code> prompt was written specifically for this project: a hand-written stage-1 bootloader, a protected-mode kernel, its own disk drivers, and its own filesystem. It's named after Rambo, a much-loved cat.</p>
+            
+            <p><strong>What it actually does:</strong></p>
+            <ul>
+                <li>Boots via a 512-byte hand-written bootloader (real mode → protected mode), with a proper MBR partition table so it boots correctly from a real USB stick on real hardware, not just in an emulator.</li>
+                <li>VGA text-mode and 320×200 graphics, straight to hardware — no BIOS calls after boot.</li>
+                <li>PS/2 keyboard driver, PIT-driven timer with a real interrupt-based tick counter.</li>
+                <li>Every CPU exception (divide error, page fault, general protection fault, etc.) is caught by a real handler and turned into a red kernel-panic screen with a full register dump — not a silent hang.</li>
+                <li>Its own flat filesystem on disk (superblock, file table, free-list allocator) — files, your name, and the machine's hostname all survive a reboot.</li>
+                <li>Two disk drivers: legacy ATA/IDE for older hardware, and a real AHCI driver (with its own PCI bus scanner) for modern SATA controllers that don't expose the old ports at all — so installing actually works on current hardware.</li>
+                <li>A dialog-box installer in the style of Debian's own text-mode installer — arrow-key menus, Yes/No confirmations that default to "No" for anything destructive, a real progress gauge.</li>
+                <li>First boot asks for a hostname and a name, Debian-installer style.</li>
+                <li>A small interactive shell (<code>edit, ls, cat, rm, df, sysfetch, whoami, panic, reboot</code>) plus <strong>peck</strong>, a little snake-style game.</li>
+                <li>A pigeon as the boot-menu mascot ("Coo.")</li>
+            </ul>
 
-What it actually does:
+            <p>It's honest about its own limits: no multitasking, no paging, no user mode yet — those are next on the list. It's a project about how much you can build with nothing but a keyboard and the Intel manual, not a production OS.</p>
+        </div>
 
-    Boots via a 512-byte hand-written bootloader (real mode → protected mode), with a proper MBR partition table so it boots correctly from a real USB stick on real hardware, not just in an emulator
-    VGA text-mode and 320×200 graphics, straight to hardware — no BIOS calls after boot
-    PS/2 keyboard driver, PIT-driven timer with a real interrupt-based tick counter
-    Every CPU exception (divide error, page fault, general protection fault, etc.) is caught by a real handler and turned into a red kernel-panic screen with a full register dump — not a silent hang
-    Its own flat filesystem on disk (superblock, file table, free-list allocator) — files, your name, and the machine's hostname all survive a reboot
-    Two disk drivers: legacy ATA/IDE for older hardware, and a real AHCI driver (with its own PCI bus scanner) for modern SATA controllers that don't expose the old ports at all — so installing actually works on current hardware, not just hardware from 15 years ago
-    A dialog-box installer in the style of Debian's own text-mode installer — arrow-key menus, Yes/No confirmations that default to "No" for anything destructive, a real progress gauge
-    First boot asks for a hostname and a name, Debian-installer style
-    A small interactive shell (edit, ls, cat, rm, df, sysfetch, whoami, panic, reboot) plus peck, a little snake-style game
-    A pigeon as the boot-menu mascot ("Coo.")
+        <hr>
 
-It's honest about its own limits: no multitasking, no paging, no user mode yet — those are next on the list. It's a project about how much you can build with nothing but a keyboard and the Intel manual, not a production OS.</h3>
-<br>
-<h3>Meow: </h3>
-<audio src="Meow.mp3" controls></audio>
+        <div class="audio-section">
+            <h3>Meow:</h3>
+            <audio src="Meow.mp3" controls></audio>
+        </div>
 
-<h4>- źródło do pobrania:</h4>
-<a href="https://drive.proton.me/urls/TVPX28V870#unbtKx9eoCdH" target="_blank"
-title="Strona proton drive z plikiem IMG">proton drive</a>
-<h4>link do discord: </h4>
-<a href="https://discord.gg/WMXEtXmern" target="_blank"
-title="Discord">Discord</a>
+        <div class="links-grid">
+            <div class="link-box">
+                <h4>Źródło do pobrania</h4>
+                <a href="https://drive.proton.me/urls/TVPX28V870#unbtKx9eoCdH" target="_blank" title="Strona proton drive z plikiem IMG" class="btn">Proton Drive</a>
+            </div>
+            
+            <div class="link-box">
+                <h4>Społeczność</h4>
+                <a href="https://discord.gg/WMXEtXmern" target="_blank" title="Discord" class="btn btn-discord">Dołącz do Discorda</a>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
